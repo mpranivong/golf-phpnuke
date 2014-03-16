@@ -1,0 +1,239 @@
+<html xmlns:og="http://ogp.me/ns" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en" >
+  <head>
+    <title>DFW Lao Golf Mobile</title>
+    
+	<!-- See https://developers.facebook.com/docs/opengraph/ -->
+	<meta property="og:title" content="DFW Lao Golf Mobile" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="//apps.facebook.com/mobile-start/" />
+	<meta property="og:site_name" content="DFW Lao Golf Mobile" />
+    
+  	<!-- See http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariHTMLRef/Articles/MetaTags.html -->
+  	<meta name="apple-mobile-web-app-capable" content="yes" />
+  	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  	
+  	<!-- See https://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+  
+  	<!-- See http://davidbcalhoun.com/2010/viewport-metatag for information on the viewport tag. -->
+  	<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/DfwLaoGolf.css">
+  </head>
+
+  <body>
+  	<div id="fb-root"></div>  	
+  	
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+	
+  	<div id="page_home" data-role="page" data-back-btn-theme="a">
+  		<div data-role="header" data-theme="a" data-position="fixed">
+  			<h2>DFW Lao Golf</h2>
+  		</div>
+  		
+  		<div data-role="content">
+  			<ul data-role="listview" data-inset="true" data-filter="false" data-theme="d" data-divider-theme="d">
+  				<li><a href="#">Login</a></li>
+  				<li><a href="#">Kwe Standing</a></li>
+  				<li><a href="#">Player and Statistics</a></li>
+  				<li><a href="#page_selectTournament">Tournaments</a></li>
+  			</ul>
+  		</div>
+  		
+  		<div data-role="footer" data-theme="a" class="ui-bar ui-grid-b" data-position="fixed">
+			<div class="classUserInfo ui-block-a" id="page_selectTournament_footer"></div>
+			<div class="ui-block-b"></div>
+			<div class="classLogoutButton ui-block-c" id=logout></div>  		
+  		</div>
+  	</div>
+  	
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->  	
+	
+	<div id="page_selectTournament" data-role="page" data-add-back-btn="true" data-back-btn-theme="a">
+		<div data-role="header" data-theme="a" data-position="fixed">
+			<h1 id="page_selectTournament_header"></h1>
+	      	<div class="show_when_not_connected">
+		        <a onclick="promptLogin()" class="login-button ui-btn-right"> 
+		        	<span>Login</span>
+		        </a>
+	      	</div>
+		</div>
+
+		<div data-role="content">
+			<ul id="tournamentList" data-role="listview" data-inset="true" data-filter="false" data-theme="d" data-divider-theme="d"></ul>
+		</div>
+
+  		<div data-role="footer" data-theme="a" class="ui-bar ui-grid-b" data-position="fixed">
+			<div class="classUserInfo ui-block-a" id="page_selectTournament_footer"></div>
+			<div class="ui-block-b"></div>
+			<div class="classLogoutButton ui-block-c" id=logout></div>
+		</div>
+	</div>
+	
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->	  	
+
+	<div id="page_tournamentResults" data-role="page" data-add-back-btn="true" data-back-btn-theme="a">
+		<div data-role="header" data-theme="a" data-position="fixed">
+			<h2 id="page_tournamentResults_title"></h2>
+	      	<div class="show_when_not_connected">
+		        <a onclick="promptLogin()" class="login-button ui-btn-right"> 
+		        	<span>Login</span>
+		        </a>
+	      	</div>			
+		</div>
+
+		<div data-role="content">
+<!-- 			<div id="winnersList"></div>
+ -->		<ul id="winnersList" data-role="listview" data-inset="true" data-filter="false" data-theme="d" data-divider-theme="d"></ul>
+			<p>
+			<ul id="leaderboardList" data-role="listview" data-inset="true" data-filter="false" data-theme="d" data-divider-theme="d"></ul>
+			</p>
+		</div>
+		
+  		<div data-role="footer" data-theme="a" class="ui-bar ui-grid-b" data-position="fixed">
+			<div class="classUserInfo ui-block-a" id="page_tournamentResults_footer"></div>
+			<div class="ui-block-b"></div>
+			<div class="classLogoutButton ui-block-c" id=logout></div>
+		</div>
+	</div>
+	  	
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->  	
+
+	<div id="page_selectUser" data-role="page" data-add-back-btn="true" data-back-btn-theme="a">
+		<div data-role="header" data-theme="a" data-position="fixed">
+			<h2 id="page_selectUser_title">Players</h2>
+	      	<div class="show_when_not_connected">
+		        <a onclick="promptLogin()" class="login-button ui-btn-right"> 
+		        	<span>Login</span>
+		        </a>
+	      	</div>				
+		</div>
+
+		<div data-role="content">
+			<div id="selectUserText"></div>
+			<ul id="userList" data-role="listview" data-inset="true" data-filter="false" data-theme="d" data-divider-theme="d"></ul>
+		</div>
+		
+  		<div data-role="footer" data-theme="a" class="ui-bar ui-grid-b" data-position="fixed">
+			<div class="classUserInfo ui-block-a" id="page_selectUser_footer"></div>
+			<div class="ui-block-b"></div>
+			<div class="classLogoutButton ui-block-c" id=logout></div>
+		</div>
+	</div>
+	
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+
+	<div id="page_selectPlayers" data-role="page" data-add-back-btn="true" data-back-btn-theme="a">
+		<div data-role="header" data-theme="a" data-position="fixed">
+			<h2 id="page_selectPlayers_title">Add other players in your group</h2>
+		</div>
+
+		<div data-role="content">
+			<ul id="playersList" data-role="listview" data-inset="true" data-filter="false" data-theme="d" data-divider-theme="d"></ul>
+		</div>
+		
+  		<div data-role="footer" data-theme="a" class="ui-bar ui-grid-b" data-position="fixed">
+			<div class="classUserInfo ui-block-a" id="page_selectPlayers_footer"></div>
+			<div class="ui-block-b"></div>
+			<div class="classLogoutButton ui-block-c" id=logout></div>
+		</div>
+	</div>
+	
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+
+	<div id="page_enterScore" data-role="page" data-add-back-btn="true" data-back-btn-theme="a">
+		<div data-role="header" data-theme="a" data-position="fixed">
+			<h2 id="tournamentTitle" class="classTournamentName"></h2>
+		</div>
+		<div data-role="content">
+		
+			<div class="classCourseName ui-bar" data-theme="f"></div>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><div>Hole #</div></div>
+				<div class="ui-block-b classHoleNumber"></div>
+			</div>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><div class="classHolePar"></div></div>
+				<div class="ui-block-b"><div class="classHoleDesc"></div></div>
+			</div>			
+<!-- 			<div class="classUser1" data-role="fieldcontain">
+				<div data-role="controlgroup" data-type="horizontal">				
+					<label for="user1Score" class="classUser1Name"></label>
+					<input id="user1Score" class="classTextNumbersOnly" style="width:50px" type="text" value="" data-mini="true" size="2" maxLength="3"></input>
+					<button data-inline="true">-</button>				
+					<button data-inline="true">+</button>
+				</div>
+			</div> -->
+			<div class="classUser1">
+				<div id="user1ScoreLabel" class="label">user 1 name</div>
+				<table class="hole">
+					<tr>
+						<td style="width: 25%; padding-left: 10px;">
+							<div id="holeNumber" class="holeLabel">Hole #9</div>
+						</td>
+						<td style="width: 50%; margin-right: 10px;"><input
+							id="user1Score" class="classTextNumbersOnly scoreInput"
+							type="text" value="" data-mini="true" size="2" maxLength="3"></input>
+						</td>
+						<td class="scoreButtons">
+							<div data-role="controlgroup" data-type="horizontal">
+								<button data-mini="true">-</button>
+								<button data-mini="true">+</button>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="classUser2" data-role="fieldcontain">
+				<div class="classUser2Name"></div>			
+				<input class="classTextNumbersOnly" type="text" value="" data-mini="true" maxLength="3" size="2"/>
+				<button data-inline="true">-</button>				
+				<button data-inline="true">+</button>			
+			</div>
+			<div class="classUser3" data-role="fieldcontain">
+				<div class="classUser3Name"></div>			
+				<input class="classTextNumbersOnly" type="text" value="" data-mini="true" maxLength="3" size="2"/>
+				<button data-inline="true">-</button>				
+				<button data-inline="true">+</button>			
+			</div>
+			<div class="classUser4" data-role="fieldcontain">
+				<div class="classUser4Name"></div>			
+				<input class="classTextNumbersOnly" type="text" value="" data-mini="true" maxLength="3" size="2"/>
+				<button data-inline="true">-</button>				
+				<button data-inline="true">+</button>			
+			</div>
+			<div class="ui-body ui-body-b">
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><button type="submit" data-theme="d" data-mini="true">Prev Hole</button></div>
+					<div class="ui-block-b"><button type="submit" data-theme="a" data-mini="true">Next Hole</button></div>
+	    		</fieldset>
+			</div>			
+		</div>
+  		<div data-role="footer" data-theme="a" class="ui-bar ui-grid-b" data-position="fixed">
+			<div class="classUserInfo ui-block-a" id="page_enterScore_footer"></div>
+			<div class="ui-block-b"></div>
+			<div class="classLogoutButton ui-block-c" id=logout></div>
+		</div>
+	</div>
+	
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+	<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+	
+	<!-- Placed at the end of the document so the pages load faster -->	
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+    <script src="js/handlebars.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/facebook_auth.js"></script>    
+    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+    <script src="dfwlaogolf/dfwlaogolf.nocache.js"></script>	
+  </body>
+</html>

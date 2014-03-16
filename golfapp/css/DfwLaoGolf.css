@@ -1,0 +1,112 @@
+
+.testBorder { border: 3px solid red }
+.classTextNumbersOnly { width: 50px; }
+.invisible { display: none; }
+
+.login-button {
+  background:url(https://s-static.ak.fbcdn.net/images/connect_sprite.png) no-repeat scroll left -188px #29447e;
+  display:inline-block;
+  line-height:14px;
+  outline:medium none;
+  padding:0 0 0 1px
+}
+
+.login-button span {
+  background:url(https://s-static.ak.fbcdn.net/images/connect_sprite.png) repeat scroll 0 0 #5f78ab;
+  border-bottom:1px solid #1a356e;
+  border-top:1px solid #879ac0;
+  color:#fff;
+  cursor:pointer;
+  display:block;
+  font-size:11px;
+  font-weight:bold;
+  margin:1px 1px 0 21px;
+  padding:2px 6px 3px;
+  font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
+}
+
+.label {
+    background-image: -ms-linear-gradient(top, #0066ff 0%, #003399 100%);
+    background-image: -moz-linear-gradient(top, #0066ff 0%, #003399 100%);
+    background-image: -o-linear-gradient(top, #0066ff 0%, #003399 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0066ff), color-stop(1, #003399));
+    background-image: -webkit-linear-gradient(top, #0066ff 0%, #003399 100%);
+    background-image: linear-gradient(to bottom, #0066ff 0%, #003399 100%);
+    background-color:#003399;
+    padding-top: 4px;
+    padding-bottom: 4px;
+max-width: 50%;        
+        
+        color: #fff;
+    font-style: italic;
+    text-shadow: #333 1px 1px;
+    text-align: center;
+    -webkit-border-top-left-radius:6px; 
+    -moz-border-top-left-radius:6px; 
+    border-top-left-radius:6px;
+    -webkit-border-top-right-radius:6px; 
+    -moz-border-top-right-radius:6px; 
+    border-top-right-radius:6px;
+    padding-left: 10px;
+    padding-right: 10px;
+}      
+.hole {
+    background: #003399;
+    width: 100%;
+    margin-bottom: 10px;
+    -webkit-border-top-right-radius:6px; 
+    -moz-border-top-right-radius:6px; 
+    border-top-right-radius:6px;
+    -webkit-border-bottom-left-radius:6px; 
+    -moz-border-bottom-left-radius:6px; 
+    border-bottom-left-radius:6px;
+        -webkit-border-bottom-right-radius:6px; 
+    -moz-border-bottom-right-radius:6px; 
+    border-bottom-right-radius:6px;
+
+}
+.holeLabel {
+ z-index: 1000;    
+ white-space:nowrap;
+    margin-top: 1px;
+ padding-left: 10px;
+ background: #ccc;
+ line-height: 32px;
+    height: 32px;
+    -webkit-border-top-left-radius:6px; 
+    -moz-border-top-left-radius:6px; 
+    border-top-left-radius:6px;
+    -webkit-border-bottom-left-radius:6px; 
+    -moz-border-bottom-left-radius:6px; 
+    border-bottom-left-radius:6px;
+    margin-right: -12px;
+}
+scoreInput {
+ z-index: 900;    
+ line-height: 30px;
+ height: 30px;
+}
+.scoreButtons {
+    width: 30%;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+​
+
+body.connected .show_when_not_connected {
+ display: none;
+}
+
+body.connected .show_when_connected {
+ display: block;
+}
+
+body.not_connected .show_when_not_connected {
+ display: block;
+}
+
+body.not_connected .show_when_connected {
+ display: none;
+}

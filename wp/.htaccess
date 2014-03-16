@@ -1,0 +1,11 @@
+AddType x-mapp-php5 .php
+
+<IfModule mod_security.c>
+<Files async-upload.php>
+ SecFilterEngine Off
+ SecFilterScanPOST Off
+</Files>
+</IfModule>
+# BEGIN WordPress
+
+# END WordPress
